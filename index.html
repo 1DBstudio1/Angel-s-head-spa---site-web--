@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel's Head - Site web</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="landing.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Angel's Head Spa</h1>
+    <h2>Bien-être</h2>
+</header>
+
+<div class="presentation">
+    <img src="photoprofile.jpg" alt="Photo de profil">
+    <h3>À propos</h3>
+    <p>
+        Bonjour, je m'appelle Laëticia. Je suis originaire des Hautes-Alpes, dans le sud rayonnant de la France,
+        où j’ai pu développer ma passion pour la santé mentale dans des cadres calmes et reposants.<br>
+        J’ai rapidement compris que la santé n’était pas un sujet à prendre à la légère, encore moins la santé mentale,
+        car pour moi, le mental est le moteur du corps.<br>
+        Si vous êtes constamment stressé(e), angoissé(e) ou anxieux(se), votre corps vous le fera comprendre.<br>
+        C’est pour cela que j’ai décidé de me former afin de maîtriser et comprendre le Head Spa.
+    </p>
+</div>
+
+<div class="explication">
+    <h4>Qu'est-ce que le Head Spa ?</h4>
+    <p>
+        Le Head Spa est bien plus qu’un soin capillaire :<br> c’est une expérience sensorielle exclusive,
+        un rituel de beauté et de lâcher-prise pensé pour rééquilibrer le corps et apaiser l’esprit.<br>
+        Inspiré des traditions asiatiques, ce soin d’exception purifie en profondeur le cuir chevelu,
+        stimule la microcirculation et libère les tensions accumulées.
+        Chaque geste est précis, délicat et enveloppant.<br>
+        Offrez-vous une parenthèse rare où le temps ralentit et où votre bien-être devient la priorité absolue.
+    </p>
+</div>
+
+<!-- BOUTON FLOTTANT -->
+<button class="btn-rdv">Prendre rendez-vous</button>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay">
+    <div class="popup">
+        <form id="rdvForm">
+            <h3>Réserver un rendez-vous</h3>
+
+            <input type="text" name="name" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Téléphone" required>
+            <input type="date" name="date" required>
+            <input type="time" name="time" required>
+
+            <button type="submit">Confirmer</button>
+        </form>
+    </div>
+</div>
+
+<script>
+const btn = document.querySelector(".btn-rdv");
+const overlay = document.getElementById("overlay");
+
+btn.addEventListener("click", () => {
+    overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>
